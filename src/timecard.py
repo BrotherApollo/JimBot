@@ -7,7 +7,7 @@ import holidays
 import calendar
 
 
-def build_payperiod(today:date= None) -> list[date]:
+def build_payperiod(today:date|None= None) -> list[date]:
     """
     Takes a optional datetime.date object, defalts to today.
 
