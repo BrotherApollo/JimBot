@@ -1,6 +1,7 @@
 import random
 import os
 
+
 def random_meme():
     memes = os.listdir("assets/")
     choice = random.choice(memes)
@@ -9,6 +10,7 @@ def random_meme():
 
 def spongify(s):
     return "".join([s[i].upper() if i % 2 else s[i].lower() for i in range(len(s))])
+
 
 def get_reacts(message) -> list[str]:
     TIME_CARD_REACTS = {
@@ -34,20 +36,28 @@ def get_reacts(message) -> list[str]:
     for keyword, emoji in TIME_CARD_REACTS.items():
         if keyword in message:
             reactions.append(emoji)
-            
+
     return reactions
+
 
 def generate_excuse():
     subjects = [
-        "I", "My dog", "My alarm", "The internet", "My computer", "My coffee machine"
+        "I",
+        "My dog",
+        "My alarm",
+        "The internet",
+        "My computer",
+        "My coffee machine",
     ]
 
-    verbs = [
-        "ate", "deleted", "blocked", "misplaced", "forgot", "refused"
-    ]
+    verbs = ["ate", "deleted", "blocked", "misplaced", "forgot", "refused"]
 
     objects = [
-        "my timecard", "the VPN connection", "my access credentials", "the report", "the reminder email"
+        "my timecard",
+        "the VPN connection",
+        "my access credentials",
+        "the report",
+        "the reminder email",
     ]
 
     modifiers = [
