@@ -33,8 +33,6 @@ bot = commands.Bot(
 )
 
 # Commands
-
-
 # !timecard
 @bot.command()
 async def timecard(ctx):
@@ -90,8 +88,6 @@ async def on_message(message: discord.Message):
 
 
 # Scheduled Reminders
-
-
 async def send_start_timecard_reminder():
     channel = bot.get_channel(TIMECARD_CHANNEL)
     await channel.send(

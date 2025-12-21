@@ -14,27 +14,27 @@ def spongify(s):
 
 def get_reacts(message) -> list[str]:
     TIME_CARD_REACTS = {
-        "bot": "🤖",
-        "timecard": "📝",
-        "sign": "✍️",
-        "errors": "⚠️",
-        "helpdesk": "🤯",
-        "holiday": "🌴",
-        "never": "🙃",
-        "jimmy": "👨‍💼",
-        "charge codes": "💳",
-        "PTO": "🏖️",
-        "payroll": "💰",
-        "email": "📧",
-        "week": "📅",
-        "today": "📅",
-        "check": "✅",
-        "hours": "🕰️",
-        "ASAP": "🏃",
+        "🤖": ["bot"],
+        "📝": ["timecard"],
+        "✍️": ["sign"],
+        "⚠️": ["error"],
+        "🤯": ["helpdesk"],
+        "🌴": ["holiday", "pto", "time off"],
+        "🙃": ["never"],
+        "👨‍💼": ["jimmy"],
+        "💳": ["charge codes", "chargecode"],
+        "💰": ["payroll", "expense"],
+        "📧": ["email"],
+        "📅": ["week", "today"],
+        "✅": ["check", "checked"],
+        "🕰️": ["hours"],
+        "🏃": ["asap", "soon"],
+        "🦞": ["lobster", "lucid", " ll "],
     }
+
     reactions = []
-    for keyword, emoji in TIME_CARD_REACTS.items():
-        if keyword in message:
+    for emoji, keywords in TIME_CARD_REACTS.items():
+        if any(trigger in message for trigger in keywords):
             reactions.append(emoji)
 
     return reactions
