@@ -8,8 +8,7 @@ from apscheduler.triggers.cron import CronTrigger
 
 # Local Imports
 from timecard import summarize_payperiod, timecard_reminder
-from meme import random_meme, spongify, get_reacts
-from excuses import generate_excuse
+from meme import random_meme, spongify, get_reacts, generate_excuse
 
 # Loading discord token form environement
 load_dotenv()
