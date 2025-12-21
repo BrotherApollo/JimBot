@@ -17,7 +17,8 @@ modifiers = [
     "and I couldn't stop crying.",
     "while I was trying to meditate.",
     "and then the Wi-Fi exploded.",
-    "and I was trapped in a parallel universe."
+    "and I was trapped in a parallel universe.",
+    "and I reported it as phishing.",
 ]
 
 def generate_excuse():

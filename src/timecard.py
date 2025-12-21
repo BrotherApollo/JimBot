@@ -5,6 +5,11 @@ Datetime logic for Calculating details about payperiods
 from datetime import timedelta, date
 import holidays
 import calendar
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+EMAIL_AID = os.getenv("EMAIL_AID", "")
 
 
 def build_payperiod(today:date|None= None) -> list[date]:
@@ -62,3 +67,11 @@ def summarize_payperiod(today=None) -> str:
         return f"This payperiod has {hours} hours and {len(period_holidays)} holiday(s): {holidays_str}."
     else:
         return f"This payperiod has {hours} hours with no holidays."
+    
+def timecard_reminder(): 
+    return """
+@everyone it's timecard day. {} 
+If you are having login issues email the following ASAP: {}
+""".format(summarize_payperiod(), EMAIL_AID)
+
+print(timecard_reminder())
