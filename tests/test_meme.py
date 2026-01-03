@@ -3,6 +3,9 @@ from src.meme import random_meme, spongify, get_reacts, generate_excuse
 
 def test_random_meme():
     assert random_meme()
+    
+def test_excuse():
+    assert generate_excuse()
 
 
 def test_random_excuse():

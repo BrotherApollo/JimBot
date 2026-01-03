@@ -65,6 +65,12 @@ async def on_message(message: discord.Message):
     if message.channel.id not in approved_channels:
         return
 
+    # Auto Reacts
+    lower_message = message.content.lower()
+    reacts = get_reacts(lower_message)
+    for emoji in reacts:
+        await message.add_reaction(emoji)
+    
     triggers = ["free beer"]
     target_users = [
         int(os.getenv("JIMMY_ID", 0)),
@@ -73,18 +79,10 @@ async def on_message(message: discord.Message):
 
     # check if message is from target user
     from_target = message.author.id in target_users
-    lower_message = message.content.lower()
 
-    # Auto Reacts
-    reacts = get_reacts(lower_message)
-    if message.mention_everyone:
-        reacts += ["🥳", "🔥"]
-    for emoji in reacts:
-        await message.add_reaction(emoji)
-
-    # Call out identified, reply with a meme
-    if message.mentions and from_target and not message.mention_everyone:
-        await message.reply(file=discord.File(random_meme()))
+    # # Call out identified, reply with a meme
+    # if message.mentions and from_target and not message.mention_everyone:
+    #     await message.reply(file=discord.File(random_meme()))
 
     # trigger phrases detected
     active_triggers = [x for x in triggers if x in lower_message]
