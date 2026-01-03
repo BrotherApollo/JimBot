@@ -3,7 +3,7 @@ import os
 
 
 def random_meme():
-    memes = os.listdir("assets/")
+    memes = os.listdir("assets/memes")
     choice = random.choice(memes)
     return f"assets/{choice}"
 
