@@ -14,22 +14,11 @@ def spongify(s):
 
 def get_reacts(message) -> list[str]:
     TIME_CARD_REACTS = {
-        "🤖": ["bot"],
         "📝": ["timecard"],
         "✍️": ["sign"],
         "⚠️": ["error"],
-        "🤯": ["helpdesk"],
-        "🌴": ["holiday", "pto", "time off"],
-        "🙃": ["never"],
-        "👨‍💼": ["jimmy"],
         "💳": ["charge codes", "chargecode"],
-        "💰": ["payroll", "expense"],
         "📧": ["email"],
-        "📅": ["week", "today"],
-        "✅": ["check", "checked"],
-        "🕰️": ["hours"],
-        "🏃": ["asap", "soon"],
-        "🦞": ["lobster", "lucid", " ll "],
     }
 
     reactions = []
@@ -44,10 +33,10 @@ def generate_excuse():
     subjects = [
         "I",
         "My dog",
-        "My alarm",
         "The internet",
         "My computer",
         "My coffee machine",
+        "My Team Lead",
     ]
 
     verbs = ["ate", "deleted", "blocked", "misplaced", "forgot", "refused"]
@@ -55,9 +44,8 @@ def generate_excuse():
     objects = [
         "my timecard",
         "the VPN connection",
-        "my access credentials",
-        "the report",
         "the reminder email",
+        "rsa token",
     ]
 
     modifiers = [

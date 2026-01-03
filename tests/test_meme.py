@@ -16,12 +16,10 @@ def test_spongify():
 
 
 def test_reacts():
-    assert get_reacts("bot") == ["🤖"]
+    assert get_reacts("error") == ["⚠️"]
     
-    assert len(get_reacts("lobster bot")) == 2
+    assert len(get_reacts("timecard error")) == 2
 
     assert len(get_reacts(
-        """Hey Jimmy, the timecard bot found an error, please check your hours 
-        ASAP. I emailed helpdesk about payroll and charge codes today since I’m 
-        taking PTO next week. Sign it soon."""
-        )) == 11
+        "The timecard error happened again I need to resign the email chargecode"
+        )) == 5
